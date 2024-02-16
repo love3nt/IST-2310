@@ -51,10 +51,10 @@ def calculate_discount(item_quantity):
 #############################################
 
 run = True
-while run:
+while True:
 
     # Prompt the user to input the quantity of items & state, if anything other than the valid states acceptable or a number less than 0, then perform error check.
-    item_quantity = int(input('Enter the quantity of items purchased: '))
+    item_quantity = int(input('\nEnter the quantity of items purchased: '))
 
     # Loop error check, until acceptable input is inputted.
     while item_quantity <= 0:
@@ -77,7 +77,7 @@ while run:
 
     # Discount applied identifier
 
-    if item_quantity > 9 and item_quantity < 20:
+    if item_quantity >= 10 and item_quantity < 20:
         print('\n5% Discount Applied.\n')
     elif item_quantity >= 20:
         print('\n10% Discount Applied.\n')
@@ -86,15 +86,19 @@ while run:
 
     # Format & Print the calculations - This approach uses the format function to format the text
     
-    print(f'Gross Cost: {gross_cost}', '16s' '8.2f')
-    print(f'Discount: {discount_amount}', '16s' '8.2f')
-    print(f'Net Cost: {net_cost}', '16s' '8.2f')
-    print(f'Tax: {tax_amount}', '16s' '8.2f')
-    print(f'After tax: {after_tax}', '16s' '8.2f')
+    print(format(f'Gross Cost:', '18s'), format(gross_cost, '8.2f'))
+    print(format(f'Discount:', '18s'), format(discount_amount, '8.2f'))
+    print(format(f'Net Cost:', '18s'), format(net_cost, '8.2f'))
+    print(format(f'Tax:', '18s'), format(tax_amount, '8.2f'))
+    print(format(f'After tax:', '18s'), format(after_tax, '8.2f'))
 
 
+    # Prompt the user if they'd like to make another calculation 
 
+    main_choice = input('\nWould you like to perform another calculation? (Y/N): ').upper()
+    while main_choice not in ('Y', 'N'):
+        main_choice = input('Invalid Input! Enter \'Y\' to continue or \'N\' to exit the program: ').upper()
 
-    # End the main program loop 
+    if main_choice =='N':
+        exit()
 
-    run = False
