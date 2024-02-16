@@ -98,11 +98,11 @@ while run:
     # Discount applied identifier
 
     if item_quantity > 9 and item_quantity < 20:
-        print('\n5% Discount Applied.')
+        print('\n5% Discount Applied.\n')
     elif item_quantity >= 20:
-        print('\n10% Discount Applied.')
+        print('\n10% Discount Applied.\n')
     else:
-        print('No Discount Applied.')
+        print('\nNo Discount Applied.\n')
 
     # Format & Print the calculations - This approach uses the format function to format the text
     print('{:<16s} {:>8.2f}'.format('Gross Cost:', gross_cost))
