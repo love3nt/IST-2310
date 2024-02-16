@@ -105,11 +105,13 @@ while run:
         print('\nNo Discount Applied.\n')
 
     # Format & Print the calculations - This approach uses the format function to format the text
-    print('{:<16s} {:>8.2f}'.format('Gross Cost:', gross_cost))
-    print('{:<16s} {:>8.2f}'.format('Discount:', discount_amount))
-    print('{:<16s} {:>8.2f}'.format('Net Cost:', net_cost))
-    print('{:<16s} {:>8.2f}'.format('Tax:', tax_amount))
-    print('{:<16s} {:>8.2f}'.format('After Tax:', after_tax))
+    
+    print(f'Gross Cost: {gross_cost}', '16s' '8.2f')
+    print(f'Discount: {discount_amount}', '16s' '8.2f')
+    print(f'Net Cost: {net_cost}', '16s' '8.2f')
+    print(f'Tax: {tax_amount}', '16s' '8.2f')
+    print(f'After tax: {after_tax}', '16s' '8.2f')
+
 
 
 
