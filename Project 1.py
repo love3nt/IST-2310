@@ -36,7 +36,7 @@ def greeting_message(message, n):
     os.system('cls' if os.name == 'nt' else 'clear')
 
 message = '\nWelcome!\n \nThis program calculates appropriate discount based on quantity purchased and corresponding sales tax based on state'
-n = 5          
+n = 3.5          
 greeting_message(message, n)
 
 
