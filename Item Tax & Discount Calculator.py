@@ -84,7 +84,7 @@ while True:
     else:
         print('\nNo Discount Applied.\n')
 
-    # Format & Print the calculations - This approach uses the format function to format the text
+    # Format & Print the calculations
     
     print(format(f'Gross Cost:', '18s'), format(gross_cost, '8.2f'))
     print(format(f'Discount:', '18s'), format(discount_amount, '8.2f'))
