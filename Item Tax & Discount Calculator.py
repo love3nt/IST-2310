@@ -1,6 +1,3 @@
-import time 
-import os 
-
 # Project 1
 
 # The Dollar Store: A store sells all items for $1. The store has the following rules
@@ -21,23 +18,6 @@ import os
 # Task: Write a python program that prompts the user for the number of items purchased and
 # 	state. The program calculates appropriate discount based on quantity purchased and
 # 	corresponding sales tax based on state
-
-
-
-
-#############################################
-###         TIMED WELCOME MESSAGE         ###
-#############################################
-
-
-def greeting_message(message, n):
-    print(message)
-    time.sleep(n)
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-message = '\nWelcome!\n \nThis program calculates appropriate discount based on quantity purchased and corresponding sales tax based on state'
-n = 3.5          
-greeting_message(message, n)
 
 
 #############################################
