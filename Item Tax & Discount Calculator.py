@@ -3,7 +3,7 @@
 # The Dollar Store: A store sells all items for $1. The store has the following rules
 
 # Discount Rules:
-# Customers buying 10 or more items receive a 5% discoun
+# Customers buying 10 or more items receive a 5% discount
 # Customers buying 20 or more items receive a 10% discount
 
 # State Tax Rules:
