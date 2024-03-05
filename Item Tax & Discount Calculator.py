@@ -1,23 +1,24 @@
-# Project 1
+# A store sells all items for $1. The store has the following business rules:
 
-# The Dollar Store: A store sells all items for $1. The store has the following rules
+# Discount Rules
+# 1. Customers buying 10 or more items receive a 5% discount.
+# 2. Customers buying 20 or more items receive a 10% discount.
 
-# Discount Rules:
-# Customers buying 10 or more items receive a 5% discount
-# Customers buying 20 or more items receive a 10% discount
+# Sales Tax Rules
+# 1. CA = 20%
+# 2. AZ = 10%
+# 3. NV = 5%
 
-# State Tax Rules:
-# CA = 20%
-# AZ = 10%
-# NV = 5%
+# Other Rules
+# 1. Quantity must be greater than zero
+# 2. Valid states are CA, AZ, and NV
 
-# Other Rules:
-# Quantity must be greater than zero
-# Valid states are CA, AZ, and NV
+# Write a python program that prompts the user for the number of items purchased and state. The
+# program calculates appropriate discount based on quantity purchased and corresponding sales
+# tax based on state.
 
-# Task: Write a python program that prompts the user for the number of items purchased and
-# 	state. The program calculates appropriate discount based on quantity purchased and
-# 	corresponding sales tax based on state
+# Functions
+# Your program will be modularized (i.e., broken down into functions). 
 
 
 #############################################
@@ -25,7 +26,7 @@
 #############################################
 
 # CALCULATE STATE TAX
-# This will calculate the state tax based on what state was entered.
+# This will calculate the state tax based on what state was entered then return it to be called later as a value.
 def calculate_state_tax(valid_state):
     if valid_state == 'CA':
         return 0.20
@@ -37,7 +38,7 @@ def calculate_state_tax(valid_state):
         return None
 
 # CALCULATE DISCOUNT
-# This will calculate the discount to be applied based on the quantity of items entered.
+# This will calculate the discount to be applied based on the quantity of items entered then return it to be called later as a value.
 def calculate_discount(item_quantity):
     if item_quantity >= 20:
         return 0.10
@@ -47,7 +48,7 @@ def calculate_discount(item_quantity):
         return 0
     
 # USER INPUT FOR ITEM QUANTITY
-# This will prompt and get the quantity from the user and error check at the same time.
+# This will prompt and get the quantity from the user and error check at the same time, then return it to be called later as a value.
 def fetch_item_quantity():
     item_quantity = int(input('\nEnter the quantity of items purchased: '))
 
@@ -57,7 +58,7 @@ def fetch_item_quantity():
     return item_quantity
 
 # USER INPUT FOR STATE
-# This will prompt and get the applicable state of purchase from the user and error check if state is valid.
+# This will prompt and get the applicable state of purchase from the user and error check if state is valid, then return it to be called later during calculations.
 def fetch_valid_state():
     valid_state = input('Enter a valid state (CA, NV, AZ): ').upper()
 
@@ -67,7 +68,7 @@ def fetch_valid_state():
     return valid_state
 
 # CALCULATE TOTALS
-# This will calculate all totals then return the values for later printing in another function.
+# This will grab all the values that we're earlier returned in other functions, calculate them accordingly, then return the values for later printing in another function.
 def calculate_all_totals(item_quantity, valid_state):
     state_tax = calculate_state_tax(valid_state)
     items_discount = calculate_discount(item_quantity)
@@ -79,7 +80,7 @@ def calculate_all_totals(item_quantity, valid_state):
     return gross_cost, discount_amount, net_cost, tax_amount, after_tax
 
 # PRINT REPORT
-# This will be the print function, that prints all calculated totals from the 'calculate_all_totals' function and format it accordingly.
+# This will be the print function, that calls from the 'calculate_all_totals' function, then prints and formats it accordingly.
 def print_totals(gross_cost, discount_amount, net_cost, tax_amount, after_tax, item_quantity):
     
     # Discount applied identifier
@@ -94,7 +95,7 @@ def print_totals(gross_cost, discount_amount, net_cost, tax_amount, after_tax, i
     print(format(f'After tax:', '18s'), format(after_tax, '8.2f'))
 
 # MAIN FUNCTION
-# This will perform a main loop -- loops the code until user is finished.
+# This will perform a main loop by calling all the functions accordingly, then prompting the user if they'd like to rerun the program, otherwise exits the program.
 def main_loop():
     while True:
         item_quantity = fetch_item_quantity()
@@ -116,7 +117,9 @@ def main_loop():
 ########################################
 ###           MAIN PROGRAM           ###
 ########################################
-            
+
+# Only one line of code for the main program because all calculations, error checks, and user inputs are modularized into functions.
+# This one line just calls the main_loop function.   
 main_loop()
 
 
